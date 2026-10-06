@@ -1,58 +1,115 @@
-# MULTI-LANGUAGE TRANSLATION APPLICATION
+# 🌐 Multi Language Translator
 
-# Project Overview
+A simple and clean Flutter app that translates text between 10 popular languages using Google Translate.
 
-The Flutter Translation App is a lightweight mobile application designed to translate text between multiple languages in real time. Developed using Flutter and the Google Translate API (via the translator package), this project demonstrates the use of API integration, state management, and a responsive UI to create a smooth user experience.
+---
 
-# Objective
+## ✨ Features
 
-The primary objective of this project is to create a simple yet powerful tool that allows users to:
+- Translate text between **10 languages**: English, Spanish, French, Hindi, Urdu, Arabic, Chinese, Japanese, Korean and Russian
+- Choose both the source and target language from dropdown menus
+- Input validation, so you can't translate an empty field
+- Read-only output box for the translated text
+- Error message shown if the translation fails (e.g. no internet)
+- Clean Material UI with a scrollable layout that adapts when the keyboard opens
 
-Translate text across different languages quickly.
+---
 
-Experience a clean and user-friendly mobile interface.
+## 🛠 Tech stack
 
-Explore Flutter’s cross-platform capabilities for Android and iOS.
+| Layer | Technology |
+|---|---|
+| Framework | [Flutter](https://flutter.dev) (Dart) |
+| Translation | [translator](https://pub.dev/packages/translator) package |
+| UI | Material Design |
 
-# Features
+---
 
-🌍 Multi-language Translation – Translate between widely used languages such as English, Urdu, Hindi, French, Arabic, and more.
+## 🚀 Getting started
 
-🎨 User-Friendly Interface – Simple input field and dropdowns for selecting source and target languages.
+### Prerequisites
 
-⚡ Real-Time Translation – Instant results using the Google Translate API.
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) (stable channel)
+- An Android/iOS device or emulator
+- An active internet connection (translation needs it)
 
-📱 Cross-Platform Support – Works seamlessly on both Android and iOS devices.
+### Setup
 
-🛠️ Error Handling – Handles invalid inputs and network errors gracefully.
+```bash
+# Clone the repo
+git clone https://github.com/<your-username>/<your-repo-name>.git
+cd <your-repo-name>
 
-# Development Workflow
-# Project Setup
+# Install dependencies
+flutter pub get
 
-Initialized a new Flutter project in Android Studio.
+# Run the app
+flutter run
+```
 
-Added dependencies in pubspec.yaml (translator: ^0.x.x).
+### Dependencies
 
-Configured project files and Flutter SDK.
+Make sure these are in your `pubspec.yaml`:
 
-# UI Implementation
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  translator: ^1.0.0
 
-Designed a text input field for user queries.
+flutter:
+  assets:
+    - assets/images/pic.png
+```
 
-Implemented language selection dropdown menus.
+---
 
-Displayed translation results in a styled output container.
+## 📂 Project structure
 
-# Translation Logic
+```
+lib/
+└── main.dart        # App entry point, translation screen and logic
+assets/
+└── images/
+    └── pic.png      # App logo shown on the home screen
+```
 
-Integrated the translator package for API-based translations.
+---
 
-Wrote functions to send input text to the API and fetch translated results.
+## 🧠 How it works
 
-Managed state updates for real-time UI changes.
+1. Type the text you want to translate.
+2. Pick the source and target languages.
+3. Tap **Translate**.
+4. The result appears in the **Translated Text** box.
 
-# Testing
+Each language is stored as a `code- Name` string (e.g. `ur- Urdu`). The app takes the code before the `-` and passes it to `GoogleTranslator().translate()` as the `from` and `to` language.
 
-Verified translations across different languages.
+---
 
-Tested on both the emulator and the real device for performance and responsiveness.
+## ⚠️ Notes
+
+- The `translator` package uses Google Translate's free, unofficial endpoint, so it may be rate-limited or stop working without notice. Use the official Google Cloud Translation API for production apps.
+- Requires an internet connection.
+
+---
+
+## 🗺 Roadmap
+
+- [ ] Swap source and target languages with one tap
+- [ ] Copy translated text to clipboard
+- [ ] Text-to-speech for the translated text
+- [ ] Voice input
+- [ ] Auto-detect source language
+- [ ] More languages
+- [ ] Translation history
+
+---
+
+## 🤝 Contributing
+
+Issues and pull requests are welcome. For larger changes, please open an issue first to discuss what you'd like to change.
+
+## 👤 Author
+
+**Malik Anas Ahmed** — [@AnasXCode](https://github.com/AnasXCode)
